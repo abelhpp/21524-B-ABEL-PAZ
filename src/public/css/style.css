@@ -7,3 +7,12 @@ html, body{
     background-color: #f0f0f0;
 /*    min-height: 100vh; /*Ocupa el 100% del alto */
 }
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 20px 4px 20px;
+    align-items: center;
+}
+

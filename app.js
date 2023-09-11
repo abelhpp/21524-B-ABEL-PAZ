@@ -5,7 +5,7 @@ const morgan = require('morgan')
 const { sequelize } = require('./database')
 const path = require('node:path')
 const {NoteModel} = require('./src/models/Notes')
-
+require('./src/models/Post')
 const app = express()
 
 app.use(express.json())
@@ -25,7 +25,7 @@ app.get('/', async (req, res) => {
 app.use('/notes', require('./src/routes/notes.routes'))
 
 app.listen(3000, () => {
-    sequelize.sync({ force: false })
+    sequelize.sync({ force: true })
         .then(() => console.log("db in conneted"))
         .catch(err => console.log(err))
     console.log("Server conectado por puerto 3000") 

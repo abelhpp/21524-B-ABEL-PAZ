@@ -3,10 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Enlaza el archivo CSS de Bootstrap node_modules/bootstrap/dist/css/bootstrap.min.css -->
     <link rel="stylesheet" href="./css/style.css">
     <title><%= title %></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 </head>
 <body>
+    <%- include('partials/navbar')%>
+    
+    <main>
+        <section></section>
+        <section><h1><%= notas%></h1>
+    
+            <ul>
+                <% notas.forEach((nota)=>{%>
+                    <%- include('partials/nota', {content: nota.content})%>
+                <%});%>
+            </ul>
+    </section>
+    </main>
     <h1><%= notas%></h1>
     
         <ul>
@@ -14,6 +29,9 @@
                 <%- include('partials/nota', {content: nota.content})%>
             <%});%>
         </ul>
-    
+    <%- include('partials/footer')%>
+
+    <!-- Enlaza el archivo JS de Bootstrap (incluye jQuery y Popper.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 </body>
 </html>
