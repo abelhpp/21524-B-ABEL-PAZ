@@ -22,11 +22,54 @@ app.get('/', async (req, res) => {
     res.render('index', { title: "Pagina principal", posts:data.reverse()})
 })
 
+
 app.get('/post', async (req, res)=>{
     res.render('post', {title:"crear POST"})
 })
 
 app.use('/posts', require('./src/routes/post.routes'))
+
+app.get('/delete/:id', async(req,res)=>{
+    const { id } = req.params;
+
+    const post = await PostModel.findByPk(id);
+
+    if (!post) {
+      return res.status(404).json({ error: 'El post no fue encontrado.' });
+    }
+
+    await post.destroy();
+
+    res.redirect('/');
+})
+
+app.get('/edit/:id', async (req, res)=>{
+    const { id } = req.params;
+    const post = await PostModel.findByPk(id);
+
+    if (!post) {
+      return res.status(404).json({ error: 'El post no fue encontrado.' });
+    }
+    res.render('edit', {title:"crear POST",post})
+})
+
+app.post('/update', async (req, res)=>{
+    const { id, title, content, imageLink } = req.body;
+
+    // Buscar el post por su ID
+    const post = await PostModel.findByPk(id);
+
+
+    // Actualizar los campos del post
+    post.title = title;
+    post.content = content;
+    post.imageLink = imageLink;
+
+    // Guardar los cambios
+    await post.save();
+
+    res.redirect('/');
+})
 
 
 

@@ -1,9 +1,18 @@
-const { Router } = require('express')
-const { createPost, listPost} = require('../controllers/post.controllers')
+const { Router } = require('express');
+const { createPost, listPost, editPost, deletePost } = require('../controllers/post.controllers');
 
-const router = Router()
+const router = Router();
 
-router.post('/', createPost)
-router.get('/', listPost)
+// Ruta para crear un nuevo post
+router.post('/', createPost);
 
-module.exports = router 
+// Ruta para listar todos los posts
+router.get('/', listPost);
+
+// Ruta para editar un post por su ID
+router.put('/', editPost);
+
+// Ruta para eliminar un post por su ID
+router.delete('/', deletePost);
+
+module.exports = router;

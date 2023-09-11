@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head')%>
+<body>
+    <%- include('partials/navbar')%>
+    
+    <main>
+<section>
+  <div class="container">
+    <h1>Editar</h1>
+    <form action="/update" method="post">
+        <!-- Campo de entrada oculto para el ID -->
+        <input type="hidden" name="id" id="id" value="<%= post.id %>"" <!-- Reemplaza "123" con el ID de tu post -->
+    
+        <div class="mb-3">
+            <label for="title" class="form-label">Título:</label>
+            <input type="text" id="title" class="form-control" name="title" value="<%= post.title %>" required>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Contenido:</label>
+            <textarea class="form-control" id="content" name="content" rows="4" required><%= post.content %></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="imageLink" class="form-label">Enlace de Imagen (URL):</label>
+            <input type="url" id="imageLink" class="form-control" name="imageLink" value="<%= post.imageLink %>">
+        </div>
+        <button type="submit" class="btn btn-primary">Actualizar Publicación</button>
+    </form>
+    </div>
+</section>
