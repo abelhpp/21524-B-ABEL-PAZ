@@ -11,7 +11,7 @@ const PostModel = sequelize.define('post', {
     allowNull: false, // No se permite contenido nulo
   },
   imageLink: {
-    type: DataTypes.STRING, // Tipo de dato para el enlace de la imagen (URL)
+    type: DataTypes.TEXT, // Tipo de dato para el enlace de la imagen (URL)
     allowNull: false, // No se permite enlace nulo
   }
 });

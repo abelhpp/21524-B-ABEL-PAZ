@@ -16,3 +16,28 @@ header {
     align-items: center;
 }
 
+.main{
+    margin: 0px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    margin: 4%;
+    border-radius: 10px;
+}
+
+.col-md-9 {
+    display: flex;
+    width: 75%;
+    align-content: stretch;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.col-md-9 h3{
+    padding-left: 8%;}
+
+.col-md-9 p{
+    text-align: end;
+}

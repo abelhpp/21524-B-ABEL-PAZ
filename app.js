@@ -5,7 +5,6 @@ const morgan = require('morgan')
 const { sequelize } = require('./database')
 const path = require('node:path')
 const {PostModel} = require('./src/models/Post');
-const { router } = require('./src/routes/post.routes');
 const app = express()
 
 app.use(express.json())
@@ -19,8 +18,8 @@ app.set('view engine', 'ejs')
 
 
 app.get('/', async (req, res) => {
-    const notas = await PostModel.findAll()
-    res.render('index', { title: "Pagina principal", notas:notas.reverse()})
+    const data = await PostModel.findAll()
+    res.render('index', { title: "Pagina principal", posts:data.reverse()})
 })
 
 app.get('/post', async (req, res)=>{

@@ -5,22 +5,28 @@
     <%- include('partials/navbar')%>
     
     <main>
-                <section><h1><%= notas%></h1>
-    
-            <ul>
-                <% notas.forEach((nota)=>{%>
-                    <%- include('partials/nota', {content: nota.content})%>
-                <%});%>
-            </ul>
+        <section class="">
+            <div class="container">
+                <h1>Posts</h1>
+                <% posts.forEach((post) => { %>
+                    <div class="card">
+                        <div class="row">
+                          <div class="col-md-9">
+                            
+                              <h3 class="card-title"><%= post.title %>:</h3>
+                              <h3 class="card-text"><%= post.content %></h3>
+                              <p class="card-text">Fecha de creación: <%= post.createdAt.toDateString() %></p>
+                            
+                          </div>
+                          <div class="col-md-3">
+                            <img src="<%= post.imageLink %>" class="img-fluid" alt="Imagen del post">
+                          </div>
+                        </div>
+                      </div>
+                <% }); %>
+            </div>        
         </section>
     </main>
-    <h1><%= notas%></h1>
-    
-        <ul>
-            <% notas.forEach((nota)=>{%>
-                <%- include('partials/nota', {content: nota.content})%>
-            <%});%>
-        </ul>
     <%- include('partials/footer')%>
 
     <!-- Enlaza el archivo JS de Bootstrap (incluye jQuery y Popper.js) -->
