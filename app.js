@@ -12,6 +12,7 @@ app.use(express.json())
 app.use(cors())
 app.use(morgan('dev'))
 
+app.use(express.static(__dirname + '/src/public'))
 app.set('views', path.join(__dirname, 'src', 'views'))
 app.set('view engine', 'ejs')
 

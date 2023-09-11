@@ -1,0 +1,9 @@
+
+/* Body  */
+html, body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+/*    min-height: 100vh; /*Ocupa el 100% del alto */
+}
