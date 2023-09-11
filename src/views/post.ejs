@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('partials/head')%>
+<body>
+    <%- include('partials/navbar')%>
+    
+    <main>
+<section>
+  <div class="container">
+    <h1>Agregar Publicación</h1>
+    <form action="/posts" method="post">
+        <div class="mb-3">
+            <label for="title" class="form-label">Título:</label>
+            <input type="text" id="title" class="form-control" name="title" required>
+        </div>
+        <div class="mb-3">
+            <label for="content" class="form-label">Contenido:</label>
+            <textarea class="form-control" id="content" name="content" rows="4" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="imageLink" class="form-label">Enlace de Imagen (URL):</label>
+            <input type="url" id="imageLink" class="form-control" name="imageLink">
+        </div>
+        <button type="submit" class="btn btn-primary">Agregar Publicación</button>
+    </form>
+</div>
+</section>

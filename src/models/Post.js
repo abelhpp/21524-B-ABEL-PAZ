@@ -13,12 +13,7 @@ const PostModel = sequelize.define('post', {
   imageLink: {
     type: DataTypes.STRING, // Tipo de dato para el enlace de la imagen (URL)
     allowNull: false, // No se permite enlace nulo
-  },
-  createdAt: {
-    type: DataTypes.DATE, // Tipo de dato para la fecha de creación
-    allowNull: false, // No se permite fecha nula
-    defaultValue: DataTypes.NOW, // Valor predeterminado: fecha actual
-  },
+  }
 });
 
-module.exports = PostModel;
+module.exports = {PostModel}
