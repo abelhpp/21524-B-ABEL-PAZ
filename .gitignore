@@ -1,0 +1,16 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Archivos generados por el sistema
+.DS_Store
+Thumbs.db
+
+# Variables de entorno locales
+.env
+.env.local
+.env.*.local
+
+# Carpeta de construcción
+/build
